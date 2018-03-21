@@ -2,7 +2,7 @@ node {
 	
 	
 	stage('Checkout') {
-	              git 'https://github.com/rajat1403/JunitMaven.git'
+	              git 'https://github.com/lohitsama/Junit.git'
 	       }
 	
 	stage('SonarQube Analysis') {
@@ -22,7 +22,7 @@ node {
 	        catch(exc) {
 	       stage('JiraBug'){
 	       withEnv(['JIRA_SITE=LOCAL']){
-	              def testIssue = [fields: [ project: [key: 'RJ'],
+	              def testIssue = [fields: [ project: [key: 'LOH'],
 	                           summary: 'New JIRA Created from Jenkins.',
 	                           description: 'New JIRA Created from Jenkins.',
 	                          issuetype: [name: 'Bug']]]
